@@ -1,7 +1,6 @@
 import './App.css'
 import React, { useState } from 'react';
 import * as htmlToImage from 'html-to-image';
-import { toJpeg } from 'html-to-image';
 
 const BOARD_OBJECT = {
   A1: '',
