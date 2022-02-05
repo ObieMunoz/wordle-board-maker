@@ -160,7 +160,7 @@ function App() {
       </div>
       <br></br>
       <br></br>
-      <input type="text" value={input} onChange={handleUpdateBoard} style={{ width: '350px' }} />
+      <input type="text" value={input} onChange={handleUpdateBoard} placeholder="Type here..." style={{ width: '350px' }} />
       <br />
       <button onClick={handleSave}>Save</button>
       <button onClick={handleReset}>Reset</button>
