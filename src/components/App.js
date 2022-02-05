@@ -42,6 +42,7 @@ function App() {
   function handleReset() {
     setBoard(BOARD_OBJECT)
     setInput('')
+    document.querySelectorAll('p').forEach(p => p.style.backgroundColor = 'black')
   }
 
   function handleColor(e) {
