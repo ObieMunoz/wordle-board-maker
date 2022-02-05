@@ -33,7 +33,6 @@ function App() {
   })
 
   function handleChange(e) {
-    // only allow 1 character
     if (e.target.value.length > 1) {
       return
     } else {
@@ -42,7 +41,6 @@ function App() {
         [e.target.name]: e.target.value.toUpperCase()
       })
     }
-    // focus next input unless this is empty now, then focus previous
     if (e.target.value === '') {
       e.target.previousElementSibling.focus()
     } else {
