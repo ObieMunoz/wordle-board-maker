@@ -1,5 +1,7 @@
 # Wordle Board Maker
 
+## Live Link: https://obiemunoz.github.io/wordle-board-maker/
+
 This project is a simple tool to create wordle-style boards and save them as images.
 
 # Usage
