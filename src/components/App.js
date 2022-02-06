@@ -1,6 +1,7 @@
 import './App.css'
 import React, { useState, useEffect } from 'react';
 import * as htmlToImage from 'html-to-image';
+import download from 'downloadjs';
 
 const BOARD_OBJECT = {
   A1: ' ',
@@ -67,12 +68,16 @@ function App() {
 
   function handleSave(e) {
     e.preventDefault()
-    htmlToImage.toJpeg(document.getElementById('board'), { quality: 0.95 })
+    // htmlToImage.toJpeg(document.getElementById('board'), { quality: 0.95 })
+    //   .then(function (dataUrl) {
+    //     var link = document.createElement('a');
+    //     link.download = 'board.jpg';
+    //     link.href = dataUrl;
+    //     link.click();
+    //   });
+    htmlToImage.toPng(document.getElementById('board'))
       .then(function (dataUrl) {
-        var link = document.createElement('a');
-        link.download = 'board.jpg';
-        link.href = dataUrl;
-        link.click();
+        download(dataUrl, 'board.png');
       });
   }
 
