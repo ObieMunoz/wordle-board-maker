@@ -68,13 +68,6 @@ function App() {
 
   function handleSave(e) {
     e.preventDefault()
-    // htmlToImage.toJpeg(document.getElementById('board'), { quality: 0.95 })
-    //   .then(function (dataUrl) {
-    //     var link = document.createElement('a');
-    //     link.download = 'board.jpg';
-    //     link.href = dataUrl;
-    //     link.click();
-    //   });
     htmlToImage.toBlob(document.getElementById('board'))
       .then(function (blob) {
         if (window.saveAs) {
