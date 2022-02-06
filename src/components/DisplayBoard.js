@@ -1,7 +1,19 @@
 import React from 'react';
 import './DisplayBoard.css';
 
-export default function DisplayBoard({ handleColor, board }) {
+export default function DisplayBoard({ board }) {
+    function handleColor(e) {
+        if (e.target.style.backgroundColor === '' || e.target.style.backgroundColor === 'black') {
+            e.target.style.backgroundColor = '#538d4e'
+        } else if (e.target.style.backgroundColor === 'rgb(83, 141, 78)') {
+            e.target.style.backgroundColor = '#b49f3b'
+        } else if (e.target.style.backgroundColor === 'rgb(180, 159, 59') {
+            e.target.style.backgroundColor = '#3a3a3c'
+        } else {
+            e.target.style.backgroundColor = 'black'
+        }
+    }
+
     return <div id="board">
         <p name="A1" className="cell" onClick={handleColor}>{board.A1}</p>
         <p name="A2" className="cell" onClick={handleColor}>{board.A2}</p>
