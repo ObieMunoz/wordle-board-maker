@@ -15,7 +15,7 @@ This project is a simple tool to create wordle-style boards and save them as ima
 
 ## Example output
 
-![example-output](./src/assets/board-example.jpg)
+![example-output](./public/example-output.png)
 
 ## How it works
 
