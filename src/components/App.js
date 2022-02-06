@@ -1,43 +1,51 @@
 import './App.css'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as htmlToImage from 'html-to-image';
 
 const BOARD_OBJECT = {
-  A1: '',
-  A2: '',
-  A3: '',
-  A4: '',
-  A5: '',
-  B1: '',
-  B2: '',
-  B3: '',
-  B4: '',
-  B5: '',
-  C1: '',
-  C2: '',
-  C3: '',
-  C4: '',
-  C5: '',
-  D1: '',
-  D2: '',
-  D3: '',
-  D4: '',
-  D5: '',
-  E1: '',
-  E2: '',
-  E3: '',
-  E4: '',
-  E5: '',
-  F1: '',
-  F2: '',
-  F3: '',
-  F4: '',
-  F5: ''
+  A1: ' ',
+  A2: ' ',
+  A3: ' ',
+  A4: ' ',
+  A5: ' ',
+  B1: ' ',
+  B2: ' ',
+  B3: ' ',
+  B4: ' ',
+  B5: ' ',
+  C1: ' ',
+  C2: ' ',
+  C3: ' ',
+  C4: ' ',
+  C5: ' ',
+  D1: ' ',
+  D2: ' ',
+  D3: ' ',
+  D4: ' ',
+  D5: ' ',
+  E1: ' ',
+  E2: ' ',
+  E3: ' ',
+  E4: ' ',
+  E5: ' ',
+  F1: ' ',
+  F2: ' ',
+  F3: ' ',
+  F4: ' ',
+  F5: ' '
 }
 
 function App() {
   const [board, setBoard] = useState(BOARD_OBJECT)
   const [input, setInput] = useState('')
+
+  useEffect(() => {
+    // document.querySelectorAll('p').forEach(p => {
+    // if (p.innerText === '' || p.innerText == null) {
+    //   p.innerText = ' '
+    // }
+    // })
+  }, [board])
 
   function handleReset() {
     setBoard(BOARD_OBJECT)
@@ -74,38 +82,38 @@ function App() {
 
   function handleUpdateBoard(e) {
     const letters = e.target.value.toUpperCase().split('')
-    setBoard({
-      A1: letters[0] || '',
-      A2: letters[1] || '',
-      A3: letters[2] || '',
-      A4: letters[3] || '',
-      A5: letters[4] || '',
-      B1: letters[5] || '',
-      B2: letters[6] || '',
-      B3: letters[7] || '',
-      B4: letters[8] || '',
-      B5: letters[9] || '',
-      C1: letters[10] || '',
-      C2: letters[11] || '',
-      C3: letters[12] || '',
-      C4: letters[13] || '',
-      C5: letters[14] || '',
-      D1: letters[15] || '',
-      D2: letters[16] || '',
-      D3: letters[17] || '',
-      D4: letters[18] || '',
-      D5: letters[19] || '',
-      E1: letters[20] || '',
-      E2: letters[21] || '',
-      E3: letters[22] || '',
-      E4: letters[23] || '',
-      E5: letters[24] || '',
-      F1: letters[25] || '',
-      F2: letters[26] || '',
-      F3: letters[27] || '',
-      F4: letters[28] || '',
-      F5: letters[29] || ''
-    })
+    setBoard(() => ({
+      A1: letters[0],
+      A2: letters[1],
+      A3: letters[2],
+      A4: letters[3],
+      A5: letters[4],
+      B1: letters[5],
+      B2: letters[6],
+      B3: letters[7],
+      B4: letters[8],
+      B5: letters[9],
+      C1: letters[10],
+      C2: letters[11],
+      C3: letters[12],
+      C4: letters[13],
+      C5: letters[14],
+      D1: letters[15],
+      D2: letters[16],
+      D3: letters[17],
+      D4: letters[18],
+      D5: letters[19],
+      E1: letters[20],
+      E2: letters[21],
+      E3: letters[22],
+      E4: letters[23],
+      E5: letters[24],
+      F1: letters[25],
+      F2: letters[26],
+      F3: letters[27],
+      F4: letters[28],
+      F5: letters[29]
+    }))
     if (e.target.value.length < 31) {
       setInput(e.target.value)
     }
