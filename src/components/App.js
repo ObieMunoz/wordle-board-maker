@@ -61,7 +61,8 @@ function App() {
     }
   }
 
-  function handleSave() {
+  function handleSave(e) {
+    e.preventDefault()
     htmlToImage.toJpeg(document.getElementById('board'), { quality: 0.95 })
       .then(function (dataUrl) {
         var link = document.createElement('a');
@@ -160,10 +161,10 @@ function App() {
       </div>
       <br></br>
       <br></br>
-      <form>
+      <form onSubmit={handleSave}>
         <input type="text" value={input} onChange={handleUpdateBoard} placeholder="Type here..." style={{ width: '350px' }} />
         <br />
-        <button onClick={handleSave}>Save</button>
+        <button type="submit">Save</button>
         <button onClick={handleReset}>Reset</button>
       </form>
 
