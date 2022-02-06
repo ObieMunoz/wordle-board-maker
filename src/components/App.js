@@ -1,8 +1,9 @@
-import './App.css'
 import React, { useState, useEffect } from 'react';
 import * as htmlToImage from 'html-to-image';
 import FileSaver from 'file-saver';
 import DisplayBoard from './DisplayBoard';
+import Instructions from './Instructions';
+import './App.css'
 
 const BOARD_OBJECT = {
   A1: ' ',
@@ -119,15 +120,8 @@ function App() {
 
   return (
     <>
-      <div id="intro" style={{ color: 'white' }}>
-        <h1>Wordle Board Maker</h1>
-        <h3>Instructions:</h3>
-        <span>1. Enter the letters you want on the board</span><br></br>
-        <span>2. Click each cell to change their colors</span><br></br>
-        <span>3. Press save to save your board image!</span><br></br>
-        <br />
-      </div>
-
+      <h1>Wordle Board Maker</h1>
+      <Instructions />
       <DisplayBoard board={board} handleColor={handleColor} />
 
       <form onSubmit={handleSave}>
@@ -148,5 +142,6 @@ function App() {
 }
 
 export default App;
+
 
 

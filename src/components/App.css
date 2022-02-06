@@ -3,34 +3,12 @@ body {
   color: white;
 }
 
-#board {
-  background-color: black;
-  width: fit-content;
-  padding: 5px;
-}
-
 span {
   font-family: "Calibri", sans-serif;
 }
 
+.cell,
 input {
-  font-family: "Calibri", sans-serif;
-  text-align: center;
-  width: 62px;
-  height: 62px;
-  font-size: 2rem;
-  font-weight: bold;
-  background-color: black;
-  color: white;
-  border: 1px solid gray;
-  margin: 2px;
-  display: inline-block;
-  vertical-align: top;
-  padding: 1px 2px;
-  line-height: 2;
-}
-
-.cell {
   font-family: "Calibri", sans-serif;
   text-align: center;
   width: 62px;
@@ -62,6 +40,7 @@ button:hover {
 }
 
 #footer {
+  margin-top: 20px;
   text-align: center;
   background-color: black;
   color: white;

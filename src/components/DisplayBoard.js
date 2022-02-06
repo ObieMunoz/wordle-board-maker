@@ -1,4 +1,5 @@
 import React from 'react';
+import './DisplayBoard.css';
 
 export default function DisplayBoard({ handleColor, board }) {
     return <div id="board">
