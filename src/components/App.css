@@ -4,6 +4,7 @@ body {
 }
 
 #board {
+  background-color: black;
   width: fit-content;
   padding: 5px;
 }

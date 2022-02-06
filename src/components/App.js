@@ -1,7 +1,8 @@
 import './App.css'
 import React, { useState, useEffect } from 'react';
 import * as htmlToImage from 'html-to-image';
-import FileSaver, { saveAs } from 'file-saver';
+import FileSaver from 'file-saver';
+import GameBoard from './GameBoard';
 
 const BOARD_OBJECT = {
   A1: ' ',
@@ -41,7 +42,6 @@ function App() {
   const [input, setInput] = useState('')
 
   useEffect(() => {
-
   }, [board])
 
   function handleReset() {
@@ -53,16 +53,12 @@ function App() {
   function handleColor(e) {
     if (e.target.style.backgroundColor === '' || e.target.style.backgroundColor === 'black') {
       e.target.style.backgroundColor = '#538d4e'
-      console.log(e.target.style.backgroundColor);
     } else if (e.target.style.backgroundColor === 'rgb(83, 141, 78)') {
       e.target.style.backgroundColor = '#b49f3b'
-      console.log(e.target.style.backgroundColor);
     } else if (e.target.style.backgroundColor === 'rgb(180, 159, 59') {
       e.target.style.backgroundColor = '#3a3a3c'
-      console.log(e.target.style.backgroundColor);
     } else {
       e.target.style.backgroundColor = 'black'
-      console.log(e.target.style.backgroundColor);
     }
   }
 
@@ -79,45 +75,45 @@ function App() {
   }
 
   function handleUpdateBoard(e) {
-    const letters = e.target.value.toUpperCase().split('')
-    while (letters.length < 30) {
-      letters.push(' ')
+    const boardData = e.target.value.toUpperCase().split('')
+    while (boardData.length < 30) {
+      boardData.push(' ')
     }
 
     setBoard(() => ({
-      A1: letters[0],
-      A2: letters[1],
-      A3: letters[2],
-      A4: letters[3],
-      A5: letters[4],
-      B1: letters[5],
-      B2: letters[6],
-      B3: letters[7],
-      B4: letters[8],
-      B5: letters[9],
-      C1: letters[10],
-      C2: letters[11],
-      C3: letters[12],
-      C4: letters[13],
-      C5: letters[14],
-      D1: letters[15],
-      D2: letters[16],
-      D3: letters[17],
-      D4: letters[18],
-      D5: letters[19],
-      E1: letters[20],
-      E2: letters[21],
-      E3: letters[22],
-      E4: letters[23],
-      E5: letters[24],
-      F1: letters[25],
-      F2: letters[26],
-      F3: letters[27],
-      F4: letters[28],
-      F5: letters[29]
+      A1: boardData[0],
+      A2: boardData[1],
+      A3: boardData[2],
+      A4: boardData[3],
+      A5: boardData[4],
+      B1: boardData[5],
+      B2: boardData[6],
+      B3: boardData[7],
+      B4: boardData[8],
+      B5: boardData[9],
+      C1: boardData[10],
+      C2: boardData[11],
+      C3: boardData[12],
+      C4: boardData[13],
+      C5: boardData[14],
+      D1: boardData[15],
+      D2: boardData[16],
+      D3: boardData[17],
+      D4: boardData[18],
+      D5: boardData[19],
+      E1: boardData[20],
+      E2: boardData[21],
+      E3: boardData[22],
+      E4: boardData[23],
+      E5: boardData[24],
+      F1: boardData[25],
+      F2: boardData[26],
+      F3: boardData[27],
+      F4: boardData[28],
+      F5: boardData[29]
     }))
     if (e.target.value.length <= 30) {
-      setInput(e.target.value)
+      setInput(() => e.target.value)
     }
   }
 
@@ -132,54 +128,14 @@ function App() {
         <br />
       </div>
 
-      <div id="board" style={{ backgroundColor: 'black' }}>
-        <p name="A1" className="cell" onClick={handleColor}>{board.A1}</p>
-        <p name="A2" className="cell" onClick={handleColor}>{board.A2}</p>
-        <p name="A3" className="cell" onClick={handleColor}>{board.A3}</p>
-        <p name="A4" className="cell" onClick={handleColor}>{board.A4}</p>
-        <p name="A5" className="cell" onClick={handleColor}>{board.A5}</p>
-        <br />
-        <p name="B1" className="cell" onClick={handleColor}>{board.B1}</p>
-        <p name="B2" className="cell" onClick={handleColor}>{board.B2}</p>
-        <p name="B3" className="cell" onClick={handleColor}>{board.B3}</p>
-        <p name="B4" className="cell" onClick={handleColor}>{board.B4}</p>
-        <p name="B5" className="cell" onClick={handleColor}>{board.B5}</p>
-        <br />
-        <p name="C1" className="cell" onClick={handleColor}>{board.C1}</p>
-        <p name="C2" className="cell" onClick={handleColor}>{board.C2}</p>
-        <p name="C3" className="cell" onClick={handleColor}>{board.C3}</p>
-        <p name="C4" className="cell" onClick={handleColor}>{board.C4}</p>
-        <p name="C5" className="cell" onClick={handleColor}>{board.C5}</p>
-        <br />
-        <p name="D1" className="cell" onClick={handleColor}>{board.D1}</p>
-        <p name="D2" className="cell" onClick={handleColor}>{board.D2}</p>
-        <p name="D3" className="cell" onClick={handleColor}>{board.D3}</p>
-        <p name="D4" className="cell" onClick={handleColor}>{board.D4}</p>
-        <p name="D5" className="cell" onClick={handleColor}>{board.D5}</p>
-        <br />
-        <p name="E1" className="cell" onClick={handleColor}>{board.E1}</p>
-        <p name="E2" className="cell" onClick={handleColor}>{board.E2}</p>
-        <p name="E3" className="cell" onClick={handleColor}>{board.E3}</p>
-        <p name="E4" className="cell" onClick={handleColor}>{board.E4}</p>
-        <p name="E5" className="cell" onClick={handleColor}>{board.E5}</p>
-        <br />
-        <p name="F1" className="cell" onClick={handleColor}>{board.F1}</p>
-        <p name="F2" className="cell" onClick={handleColor}>{board.F2}</p>
-        <p name="F3" className="cell" onClick={handleColor}>{board.F3}</p>
-        <p name="F4" className="cell" onClick={handleColor}>{board.F4}</p>
-        <p name="F5" className="cell" onClick={handleColor}>{board.F5}</p>
-      </div>
-      <br></br>
-      <br></br>
+      <GameBoard board={board} handleColor={handleColor} />
+
       <form onSubmit={handleSave}>
         <input type="text" value={input} onChange={handleUpdateBoard} placeholder="Type here..." style={{ width: '350px' }} />
         <br />
         <button type="submit">Save</button>
         <button onClick={handleReset}>Reset</button>
       </form>
-
-      <br />
-      <br />
 
       <div id="footer">
         Made by <a href="https://www.linkedin.com/in/obedmunozjr/">Obie Munoz</a><br />
@@ -192,3 +148,5 @@ function App() {
 }
 
 export default App;
+
+
