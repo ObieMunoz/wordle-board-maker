@@ -2,7 +2,7 @@ import './App.css'
 import React, { useState, useEffect } from 'react';
 import * as htmlToImage from 'html-to-image';
 import FileSaver from 'file-saver';
-import GameBoard from './GameBoard';
+import DisplayBoard from './DisplayBoard';
 
 const BOARD_OBJECT = {
   A1: ' ',
@@ -128,7 +128,7 @@ function App() {
         <br />
       </div>
 
-      <GameBoard board={board} handleColor={handleColor} />
+      <DisplayBoard board={board} handleColor={handleColor} />
 
       <form onSubmit={handleSave}>
         <input type="text" value={input} onChange={handleUpdateBoard} placeholder="Type here..." style={{ width: '350px' }} />

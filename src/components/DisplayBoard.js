@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function GameBoard({ handleColor, board }) {
+export default function DisplayBoard({ handleColor, board }) {
     return <div id="board">
         <p name="A1" className="cell" onClick={handleColor}>{board.A1}</p>
         <p name="A2" className="cell" onClick={handleColor}>{board.A2}</p>
