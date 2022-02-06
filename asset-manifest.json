@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/wordle-board-maker/static/css/main.ad8688c4.css",
-    "main.js": "/wordle-board-maker/static/js/main.5fc62046.js",
+    "main.css": "/wordle-board-maker/static/css/main.00b74066.css",
+    "main.js": "/wordle-board-maker/static/js/main.7a467c98.js",
     "index.html": "/wordle-board-maker/index.html",
-    "main.ad8688c4.css.map": "/wordle-board-maker/static/css/main.ad8688c4.css.map",
-    "main.5fc62046.js.map": "/wordle-board-maker/static/js/main.5fc62046.js.map"
+    "main.00b74066.css.map": "/wordle-board-maker/static/css/main.00b74066.css.map",
+    "main.7a467c98.js.map": "/wordle-board-maker/static/js/main.7a467c98.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad8688c4.css",
-    "static/js/main.5fc62046.js"
+    "static/css/main.00b74066.css",
+    "static/js/main.7a467c98.js"
   ]
 }
