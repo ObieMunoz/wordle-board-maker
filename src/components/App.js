@@ -40,11 +40,7 @@ function App() {
   const [input, setInput] = useState('')
 
   useEffect(() => {
-    // document.querySelectorAll('p').forEach(p => {
-    // if (p.innerText === '' || p.innerText == null) {
-    //   p.innerText = ' '
-    // }
-    // })
+
   }, [board])
 
   function handleReset() {
@@ -82,6 +78,10 @@ function App() {
 
   function handleUpdateBoard(e) {
     const letters = e.target.value.toUpperCase().split('')
+    while (letters.length < 30) {
+      letters.push(' ')
+    }
+
     setBoard(() => ({
       A1: letters[0],
       A2: letters[1],
@@ -114,7 +114,7 @@ function App() {
       F4: letters[28],
       F5: letters[29]
     }))
-    if (e.target.value.length < 31) {
+    if (e.target.value.length <= 30) {
       setInput(e.target.value)
     }
   }
