@@ -1,4 +1,5 @@
 import React from 'react';
+import './Instructions.css'
 
 export default function Instructions() {
     return <div id="instructions" style={{ color: 'white' }}>

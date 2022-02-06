@@ -1,10 +1,4 @@
-#board {
-  background-color: black;
-  width: fit-content;
-  padding: 5px;
-}
-
-.cell {
+input {
   font-family: "Calibri", sans-serif;
   text-align: center;
   width: 62px;
@@ -15,8 +9,23 @@
   color: white;
   border: 1px solid gray;
   margin: 2px;
+  margin-left: 6px;
   display: inline-block;
   vertical-align: top;
   padding: 1px 2px;
   line-height: 2;
+}
+
+button {
+  background-color: black;
+  border: 1px solid gray;
+  padding: 10px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 6px;
+}
+
+button:hover {
+  background-color: gray;
 }

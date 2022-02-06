@@ -1,0 +1,17 @@
+#footer {
+  margin-top: 20px;
+  margin-left: 6px;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border: 1px solid gray;
+  width: fit-content;
+  padding: 10px;
+}
+
+#footer a {
+  color: royalblue;
+  text-decoration: none;
+}
