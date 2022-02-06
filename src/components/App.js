@@ -1,7 +1,7 @@
 import './App.css'
 import React, { useState, useEffect } from 'react';
 import * as htmlToImage from 'html-to-image';
-import download from 'downloadjs';
+import FileSaver, { saveAs } from 'file-saver';
 
 const BOARD_OBJECT = {
   A1: ' ',
@@ -75,9 +75,13 @@ function App() {
     //     link.href = dataUrl;
     //     link.click();
     //   });
-    htmlToImage.toPng(document.getElementById('board'))
-      .then(function (dataUrl) {
-        download(dataUrl, 'board.png');
+    htmlToImage.toBlob(document.getElementById('board'))
+      .then(function (blob) {
+        if (window.saveAs) {
+          window.saveAs(blob, 'board.png');
+        } else {
+          FileSaver.saveAs(blob, 'board.png');
+        }
       });
   }
 

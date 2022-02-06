@@ -5,10 +5,11 @@ body {
 
 #board {
   width: fit-content;
+  padding: 5px;
 }
 
 span {
-  font-family: "Calibril", sans-serif;
+  font-family: "Calibri", sans-serif;
 }
 
 input {
